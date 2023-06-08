@@ -180,14 +180,215 @@ let mainWrapper = document.createElement("div");
     body.appendChild(mainWrapper);
     mainWrapper.classList.add("mainWrapper");
 
-    let cardContainer = document.createElement("div");
-    let cardImg = document.createElement("img");
-    let cardName = document.createElement("div");
-    let cardText = document.createElement("div");
+    for( let i = 1; i <= 9; i++ ) {
+        
+    let cardRowContainer = document.createElement("div");
+        mainWrapper.appendChild(cardRowContainer);
+        cardRowContainer.classList.add("cardRowContainer");
+        cardRowContainer.style = `
+        border: pink dashed 2px;
+        width: 33%;
+        height: 20rem;
 
-for( let i = 1; i <= 0; i++ ) {
+        display: flex;
+        justify-content: center;
+        
+        `
+    let cardContainer = document.createElement("div");
+        cardRowContainer.appendChild(cardContainer);
+        cardContainer.classList.add("cardContainer" + i );
+        cardContainer.style = `
+        border: blue solid 2px;
+        width: 14rem;
+        height: 18rem;
+
+        margin-top: 7rem;
+
+        display: flex;
+        
+        `
+
+    let cardTitleContainer = document.createElement("div");
+        cardContainer.appendChild(cardTitleContainer);
+        cardTitleContainer.classList.add("cardTitleContainer" + i );
+
+    let cardTitle = document.createElement("div");
+        cardTitleContainer.appendChild(cardTitle);
+        cardTitle.classList.add("cardTitle" + i );
+
+    let cardImgContainer = document.createElement("img");
+        cardContainer.appendChild(cardImgContainer);
+        cardImgContainer.classList.add("cardImgContainer" + i );
+
+    let cardImg = document.createElement("div");
+        cardImgContainer.appendChild(cardImg);
+        cardImg.classList.add("cardImg" + i );
+   
+    let cardText = document.createElement("div");
     
 }
+
+///////////////////////////////////////////
+    //styling of the headContainer//
+//////////////////////////////////////////    
+
+        body.style = `
+        padding: 0;
+        margin: 0;
+        border: red solid 2px;
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        `
+        headContainer.style = `
+        border: blue solid 2px;
+        width: 90%;
+        height: 25%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        `
+
+        profileImgContainer.style = `
+        border: green solid 2px;
+        width: 8%;
+        height: 5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        `
+
+        profileImg.style = `
+        border: gray solid 2px;
+        width: 100%;
+        height: 100%;
+        
+        display: flex;
+        `
+
+        headTextWrapper.style = `
+        border: pink solid 2px;
+        width: 75%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+
+        `
+
+        headTextContainer.style = `
+        border: yellow solid 2px;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+
+        `
+
+        headTitle.style = `
+        border: black solid 2px;
+        width: 100%;
+        height: 100%;
+
+        `
+
+        headText.style = `
+        border: orange dashed 2px;
+        width: 100%;
+        height: 100%;
+        
+        `
+
+
+/////////////////////////////////////////////
+        //styling of the mainWrapper//
+        //see the for loop lign 183//
+////////////////////////////////////////////
+
+        mainWrapper.style = `
+        border: gray solid 4px;
+        width: 80%;
+        height: 100vh;
+
+        padding-left: 4rem;
+        padding-right: 4rem;
+
+        display: flex;
+        
+        align-items: space-around;
+
+        text-wrap: break-word;
+        
+        `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
