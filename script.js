@@ -144,8 +144,13 @@ const favoriteGames = [
 
 
 let body = document.querySelector("body");
+
+let wrapper = document.createElement("div");
+    body.appendChild(wrapper);
+    wrapper.classList.add("wrapper");
+
 let headContainer = document.createElement("div");
-    body.appendChild(headContainer);
+    wrapper.appendChild(headContainer);
     headContainer.classList.add("headContainer");
 
 let profileImgContainer = document.createElement("div");
@@ -177,55 +182,93 @@ let headText = document.createElement("div");
 /////////////////////////////////////////////////
 
 let mainWrapper = document.createElement("div");
-    body.appendChild(mainWrapper);
+    wrapper.appendChild(mainWrapper);
     mainWrapper.classList.add("mainWrapper");
 
-    for( let i = 1; i <= 9; i++ ) {
+    for( let i = 1; i <= 4; i++ ) {
         
-    let cardRowContainer = document.createElement("div");
+        let cardRowContainer = document.createElement("div");
         mainWrapper.appendChild(cardRowContainer);
         cardRowContainer.classList.add("cardRowContainer");
         cardRowContainer.style = `
         border: pink dashed 2px;
-        width: 33%;
+        width: 100%;
         height: 20rem;
 
-        display: flex;
-        justify-content: center;
-        
-        `
-    let cardContainer = document.createElement("div");
-        cardRowContainer.appendChild(cardContainer);
-        cardContainer.classList.add("cardContainer" + i );
-        cardContainer.style = `
-        border: blue solid 2px;
-        width: 14rem;
-        height: 18rem;
-
-        margin-top: 7rem;
 
         display: flex;
-        
+        justify-content: space-around;
+        align-items: center;
         `
-
-    let cardTitleContainer = document.createElement("div");
-        cardContainer.appendChild(cardTitleContainer);
-        cardTitleContainer.classList.add("cardTitleContainer" + i );
-
-    let cardTitle = document.createElement("div");
-        cardTitleContainer.appendChild(cardTitle);
-        cardTitle.classList.add("cardTitle" + i );
-
-    let cardImgContainer = document.createElement("img");
-        cardContainer.appendChild(cardImgContainer);
-        cardImgContainer.classList.add("cardImgContainer" + i );
-
-    let cardImg = document.createElement("div");
-        cardImgContainer.appendChild(cardImg);
-        cardImg.classList.add("cardImg" + i );
-   
-    let cardText = document.createElement("div");
     
+
+
+    for( let j = 1; j <= 4; j++ ) {
+      
+        let cardContainer = document.createElement("div");
+            cardRowContainer.appendChild(cardContainer);
+            cardContainer.classList.add("cardContainer" + i );
+            cardContainer.style = `
+            border: blue solid 2px;
+            width: 16rem;
+            height: 19rem;
+            border-radius: 0.2rem; 
+            overflow: hidden;
+            
+
+            display: flex;
+            justify-content: center;
+            `
+            let picture1;
+            let picture2;
+
+                const cardContainer1 = document.querySelector(".cardContainer1");
+                const cardContainer6 = document.querySelector(".cardContainer5")
+
+                for (const genre of favoriteGames) {
+                if (genre.genre === 'Horror') {
+                    picture1 = genre.games[0].image;
+                    break;
+                } 
+                }
+
+                if (cardContainer1 && picture1) {
+                cardContainer1.innerHTML = `<img src="${picture1}" alt="Game Image">`;
+                }
+
+                for (const genre of favoriteGames) {
+                    if (genre.genre === 'Horror') {
+                        picture2 = genre.games[1].image;
+                        break;
+                    } 
+                    }
+    
+                    if (cardContainer6 && picture2) {
+                    cardContainer6.innerHTML = `<img src="${picture2}" alt="Game Image">`;
+                    }
+    
+
+               
+
+        let cardTitleContainer = document.createElement("div");
+            cardContainer.appendChild(cardTitleContainer);
+            cardTitleContainer.classList.add("cardTitleContainer" + i );
+
+        let cardTitle = document.createElement("div");
+            cardTitleContainer.appendChild(cardTitle);
+            cardTitle.classList.add("cardTitle" + i );
+
+        let cardImgContainer = document.createElement("img");
+            cardContainer.appendChild(cardImgContainer);
+            cardImgContainer.classList.add("cardImgContainer" + i );
+
+        let cardImg = document.createElement("div");
+            cardImgContainer.appendChild(cardImg);
+            cardImg.classList.add("cardImg" + i );
+    
+        let cardText = document.createElement("div");
+    
+}
 }
 
 ///////////////////////////////////////////
@@ -233,21 +276,35 @@ let mainWrapper = document.createElement("div");
 //////////////////////////////////////////    
 
         body.style = `
+        background-color: #F2F2F2;
         padding: 0;
         margin: 0;
         border: red solid 2px;
         width: 100%;
-        height: 100vh;
+        
 
         display: flex;
         flex-direction: column;
         align-items: center;
+
         
         `
+
+        wrapper.style = `
+        border: black dashed 3px;
+        width: 100%; 
+        height: 99rem;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        `
+
         headContainer.style = `
         border: blue solid 2px;
         width: 90%;
-        height: 25%;
+        height: 12%;
 
         display: flex;
         justify-content: center;
@@ -257,7 +314,7 @@ let mainWrapper = document.createElement("div");
 
         profileImgContainer.style = `
         border: green solid 2px;
-        width: 8%;
+        width: 5%;
         height: 5rem;
 
         display: flex;
@@ -274,7 +331,7 @@ let mainWrapper = document.createElement("div");
         `
 
         headTextWrapper.style = `
-        border: pink solid 2px;
+        // border: black solid 2px;
         width: 75%;
         height: 100%;
 
@@ -285,27 +342,31 @@ let mainWrapper = document.createElement("div");
         `
 
         headTextContainer.style = `
-        border: yellow solid 2px;
+        border: green solid 2px;
         width: 100%;
         height: 100%;
 
         display: flex;
         flex-direction: column;
-        justify-items: center;
-
+        justify-content: space-between;
+        align-items: center;
         `
 
         headTitle.style = `
-        border: black solid 2px;
-        width: 100%;
-        height: 100%;
+        border: orange solid 2px;
+        width: 90%;
+        height: 40%;
 
+        margin-top: 1rem;
+
+        display: flex;
+        
         `
 
         headText.style = `
         border: orange dashed 2px;
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 40%;
         
         `
 
@@ -316,206 +377,32 @@ let mainWrapper = document.createElement("div");
 ////////////////////////////////////////////
 
         mainWrapper.style = `
-        border: gray solid 4px;
+        border: violet solid 4px;
         width: 80%;
-        height: 100vh;
+        height: 83rem;
 
         padding-left: 4rem;
         padding-right: 4rem;
 
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         
-        align-items: space-around;
 
-        text-wrap: break-word;
+  
         
         `
 
 
 
 
+/////////////////////////////////////////////
+        //populating cardContainer1 with object     //
+////////////////////////////////////////////
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let container = document.createElement("div");
-// document.body.appendChild(container);               //container just under body
-// container.classList.add("container");
-
-// let containerHero = document.createElement("div");
-// container.appendChild(containerHero);               //containerHero
-// containerHero.classList.add("containerHero");
-
-// let containerImgTextContainer = document.createElement("div");
-// containerHero.appendChild(containerImgTextContainer);                   //containerHero
-// containerImgTextContainer.classList.add("containerImgTextContainer");
-
-// let profileImgContainer = document.createElement("div");
-// containerImgTextContainer.appendChild(profileImgContainer);             //profileImgContainer
-// profileImgContainer.classList.add("profileImgContainer");
-
-
-//     let profileImg = document.createElement("img");
-//     profileImgContainer.appendChild(profileImg);
-//     profileImg.classList.add("profileImg");
-//     profileImg.src = "https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Dead_by_Daylight_Steam_header.jpg/220px-Dead_by_Daylight_Steam_header.jpg";
-
-
-
-// let containerText = document.createElement("div");
-// containerHero.appendChild(containerText);                       //containerText
-// containerText.classList.add("containerText");
-
-// let titleText = document.createElement("div");
-// containerText.appendChild(titleText);                   //titleText
-// titleText.classList.add("titleText");
-
-// titleText.innerText = "Adam Krynski's Collection"
-
-// const loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-// let textLorem = document.createElement("div");
-// containerText.appendChild(textLorem);                   //textLorem
-// textLorem.classList.add("textLorem");
-
-//     textLorem.innerText = loremIpsum;
-
-// let containerMain = document.createElement("div");
-// container.appendChild(containerMain);
-// containerMain.classList.add("gallery");
-
-
-// //yet to verify/change
-// document.body.style = `
-//     border: red solid 3px;
-//     width: 100%;
-//     height: 100vh;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-
-// `;
-
-// containerHero.style.cssText = `
-
-//     border: blue dashed 2px;
-//     color :blue;
-//     width: 100%;
-//     height: 20rem;
-
-//     font-family: sans-serif;
-//     font-size: 2rem;
-//     font-weight: 300;
-//     display: flex;
-//     justify-content: center;
-
-// `;
-
-// container.style.cssText = `
-
-//     border: red solid 2px;
-//     width: 80%;
-//     height: 30vh;
-//     display:flex;
-//     justify-content: space-between;
-
-
-// `;
-
-// profileImgContainer.style.cssText = `
-//     border: violet solid 2px;
-//     width: 21%;
-//     height: 10rem;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// `;
-
-//     profileImg.style.cssText = `
-//         border: blue solid 2px;
-//         width: 70%;
-//         height: 7rem;
-
-//         border-radius: 8rem 8rem 8rem 8rem;
-
-//         display: flex;
-//     `;
-
-// containerHero.style.cssText = `
-//     border: green solid 2px;
-//     width: 60%;
-//     height: 25vh;
-
-//     display: flex;
-//     justify-content: flex-start;
-//     align-items: center;
-// `
 
 
 
