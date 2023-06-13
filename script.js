@@ -46,6 +46,19 @@ const favoriteGames = [
                 nbOfMaps: 'Undefined',
                 nbOfKillers: 'Undefined',
                 nbOfSurvivors: 'Undefined',
+            },
+
+            {
+                image: 'https://ds.static.rtbf.be/article/image/1920x1080/1/0/2/c3a6bc0aaeb74a8a13f1e29e7e36e5a6-1526987790.jpg',
+                name: 'Resident Evil: Biohazard',
+                releaseYear: '2017',
+                online: 'no',
+                typeOfGame: 'first-person shooter',
+                platforms: ['Windows', 'PlayStation 3', 'PlayStation 4', 'Xbox One'],
+                hoursPlayed: '15',
+                nbOfMaps: 'Undefined',
+                nbOfKillers: 'Undefined',
+                nbOfKillers: 'Undefined',
             }
 
         ]
@@ -195,6 +208,7 @@ let mainWrapper = document.createElement("div");
         width: 100%;
         height: 20rem;
 
+        // flex-wrap: wrap;
 
         display: flex;
         justify-content: space-around;
@@ -207,7 +221,8 @@ let mainWrapper = document.createElement("div");
       
         let cardContainer = document.createElement("div");
             cardRowContainer.appendChild(cardContainer);
-            cardContainer.classList.add("cardContainer" + i );
+            cardRowContainer.classList.add("rowContainer" + i );
+            cardContainer.classList.add("cardContainer" + j );
             cardContainer.style = `
             border: blue solid 2px;
             width: 16rem;
@@ -221,34 +236,64 @@ let mainWrapper = document.createElement("div");
             `
             let picture1;
             let picture2;
+            let picture3;
+            let picture4;
 
                 const cardContainer1 = document.querySelector(".cardContainer1");
-                const cardContainer6 = document.querySelector(".cardContainer5")
+                const cardContainer2 = document.querySelector(".cardContainer2");
+                const cardContainer3 = document.querySelector(".cardContainer3");
+                const cardContainer4 = document.querySelector(".cardContainer4");
 
                 for (const genre of favoriteGames) {
-                if (genre.genre === 'Horror') {
-                    picture1 = genre.games[0].image;
-                    break;
-                } 
-                }
+                    if (genre.genre === 'Horror') {
+                        picture1 = genre.games[0].image;
+                        break;
+                    } 
+                    }
 
-                if (cardContainer1 && picture1) {
-                cardContainer1.innerHTML = `<img src="${picture1}" alt="Game Image">`;
-                }
+                    if (cardContainer1 && picture1) {
+                    cardContainer1.innerHTML = `<img src="${picture1}" alt="Game Image">`;
+                    }
 
                 for (const genre of favoriteGames) {
                     if (genre.genre === 'Horror') {
                         picture2 = genre.games[1].image;
                         break;
                     } 
+                }
+                   
+                    if (cardContainer2 && picture2) {
+                    cardContainer2.innerHTML = `<img src="${picture2}" alt="Game Image">`;
                     }
-    
-                    if (cardContainer6 && picture2) {
-                    cardContainer6.innerHTML = `<img src="${picture2}" alt="Game Image">`;
+                    
+                for (const genre of favoriteGames) {
+                    if (genre.genre === 'Horror') {
+                        picture3 = genre.games[2].image;
+                        break;
+                    } 
+                }
+                       
+                    if (cardContainer3 && picture3) {
+                    cardContainer3.innerHTML = `<img src="${picture3}" alt="Game Image">`;
                     }
-    
+                    
+                    for (const genre of favoriteGames) {
+                        if (genre.genre === 'Horror') {
+                            picture4 = genre.games[3].image;
+                            break;
+                            } 
+                            }
+                           
+                            if (cardContainer4 && picture4) {
+                            cardContainer4.innerHTML = `<img src="${picture4}" alt="Game Image">`;
+                            }
 
-               
+                    // favoriteGames.games.forEach((genre) => {
+
+                    //     genre.games.forEach((games) => {
+            
+                    //     });
+                    // });
 
         let cardTitleContainer = document.createElement("div");
             cardContainer.appendChild(cardTitleContainer);
@@ -378,11 +423,12 @@ let mainWrapper = document.createElement("div");
 
         mainWrapper.style = `
         border: violet solid 4px;
-        width: 80%;
+        width: 90%;
         height: 83rem;
 
         padding-left: 4rem;
         padding-right: 4rem;
+       
 
         display: flex;
         flex-direction: column;
