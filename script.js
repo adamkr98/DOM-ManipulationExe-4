@@ -105,6 +105,19 @@ const favoriteGames = [
                 nbOfKillers: 'Undefined',
                 nbOfKillers: 'Undefined',
             },
+
+            {
+                image: 'https://images.gog-statics.com/6508b1ee5fd279a6968554add231c219b632921075463ba230172b58f0825899_product_card_v2_mobile_slider_639.jpg',
+                name: 'Tomb Raider: Legend',
+                releaseYear: '2006',
+                online: 'no',
+                typeOfGame: 'solo',
+                platforms: ['Windows', 'PlayStation 2', 'PSP', 'PlayStation 3', 'Xbox 360'],
+                hoursPlayed: '15',
+                nbOfMaps: 'Undefined',
+                nbOfKillers: 'Undefined',
+                nbOfKillers: 'Undefined',
+            },
         ],
     },
 
@@ -138,13 +151,13 @@ const favoriteGames = [
             },
 
             {
-                image: 'https://www.games-manuals.com/wp-content/uploads/2023/01/Kerbal-Space-Program.jpg',
-                name: 'Kerbal Space Program',
-                releaseYear: '2017',
-                online: 'no',
-                typeOfGame: 'space flight simulator',
-                platforms: ['Windows', 'PlayStation 4', 'PlayStation 5', 'Xbox One',],
-                hoursPlayed: '144,4',
+                image: 'https://images.gog-statics.com/9086e259a293bed11ecd5dd3c9b5c85d28f4474b612795a1d29c286aab481217.jpg',
+                name: 'Besiege',
+                releaseYear: '2015',
+                online: 'yes',
+                typeOfGame: 'strategy/simulation',
+                platforms: ['Windows', 'macOS', 'Xbox Series', 'Xbox One',],
+                hoursPlayed: '97.3',
                 nbOfMaps: 'Undefined',
                 nbOfKillers: 'Undefined',
                 nbOfKillers: 'Undefined',
@@ -153,7 +166,6 @@ const favoriteGames = [
     },
     
 ]               
-
 
 
 let body = document.querySelector("body");
@@ -202,9 +214,9 @@ let mainWrapper = document.createElement("div");
         
         let cardRowContainer = document.createElement("div");
         mainWrapper.appendChild(cardRowContainer);
-        cardRowContainer.classList.add("cardRowContainer");
+        cardRowContainer.classList.add("cardRowContainer" + i);
         cardRowContainer.style = `
-        border: pink dashed 2px;
+        // border: pink dashed 2px;
         width: 100%;
         height: 20rem;
 
@@ -221,10 +233,11 @@ let mainWrapper = document.createElement("div");
       
         let cardContainer = document.createElement("div");
             cardRowContainer.appendChild(cardContainer);
-            cardRowContainer.classList.add("rowContainer" + i );
-            cardContainer.classList.add("cardContainer" + j );
+            cardRowContainer.classList.add("cardRowContainer" + i );
+            cardContainer.classList.add("cardContainer" + i + "-" + j );
+
             cardContainer.style = `
-            border: blue solid 2px;
+            border: white solid 2px;
             width: 16rem;
             height: 19rem;
             border-radius: 0.2rem; 
@@ -233,98 +246,165 @@ let mainWrapper = document.createElement("div");
 
             display: flex;
             justify-content: center;
+
+            object: fit;
             `
-            let picture1;
-            let picture2;
-            let picture3;
-            let picture4;
-
-                const cardContainer1 = document.querySelector(".cardContainer1");
-                const cardContainer2 = document.querySelector(".cardContainer2");
-                const cardContainer3 = document.querySelector(".cardContainer3");
-                const cardContainer4 = document.querySelector(".cardContainer4");
-
-                for (const genre of favoriteGames) {
-                    if (genre.genre === 'Horror') {
-                        picture1 = genre.games[0].image;
-                        break;
-                    } 
-                    }
-
-                    if (cardContainer1 && picture1) {
-                    cardContainer1.innerHTML = `<img src="${picture1}" alt="Game Image">`;
-                    }
-
-                for (const genre of favoriteGames) {
-                    if (genre.genre === 'Horror') {
-                        picture2 = genre.games[1].image;
-                        break;
-                    } 
-                }
-                   
-                    if (cardContainer2 && picture2) {
-                    cardContainer2.innerHTML = `<img src="${picture2}" alt="Game Image">`;
-                    }
-                    
-                for (const genre of favoriteGames) {
-                    if (genre.genre === 'Horror') {
-                        picture3 = genre.games[2].image;
-                        break;
-                    } 
-                }
-                       
-                    if (cardContainer3 && picture3) {
-                    cardContainer3.innerHTML = `<img src="${picture3}" alt="Game Image">`;
-                    }
-                    
-                    for (const genre of favoriteGames) {
-                        if (genre.genre === 'Horror') {
-                            picture4 = genre.games[3].image;
-                            break;
-                            } 
-                            }
-                           
-                            if (cardContainer4 && picture4) {
-                            cardContainer4.innerHTML = `<img src="${picture4}" alt="Game Image">`;
-                            }
-
-                    // favoriteGames.games.forEach((genre) => {
-
-                    //     genre.games.forEach((games) => {
             
-                    //     });
-                    // });
 
-        let cardTitleContainer = document.createElement("div");
-            cardContainer.appendChild(cardTitleContainer);
-            cardTitleContainer.classList.add("cardTitleContainer" + i );
+            
+        
 
-        let cardTitle = document.createElement("div");
-            cardTitleContainer.appendChild(cardTitle);
-            cardTitle.classList.add("cardTitle" + i );
+           
+               
 
-        let cardImgContainer = document.createElement("img");
-            cardContainer.appendChild(cardImgContainer);
-            cardImgContainer.classList.add("cardImgContainer" + i );
 
-        let cardImg = document.createElement("div");
-            cardImgContainer.appendChild(cardImg);
-            cardImg.classList.add("cardImg" + i );
+
+                // for (const genre of favoriteGames) {
+                //     if (genre.genre === 'Horror') {
+                //         picture1 = genre.games[0].image;
+                //         picture2 = genre.games[1].image;
+                //         picture3 = genre.games[2].image;
+                //         picture4 = genre.games[3].image;
+
+
+                        // if (cardContainer1 && picture1) {
+                        //     cardContainer1.innerHTML = `<img src="${picture1}" alt="Game Image">`;
+                        //     }
+        
+                        //     if (cardContainer2 && picture2) {
+                        //     cardContainer2.innerHTML = `<img src="${picture2}" alt="Game Image">`;
+                        //     }
+        
+                        //     if (cardContainer3 && picture3) {
+                        //     cardContainer3.innerHTML = `<img src="${picture3}" alt="Game Image">`;
+                        //     }
+        
+                        //     if (cardContainer4 && picture4) {
+                        //     cardContainer4.innerHTML = `<img src="${picture4}" alt="Game Image">`;
+                        //     }
+                        //     break;
+                    }
+                }
+
+                
+                    
+const cardContainer1 = document.querySelector(".cardContainer1-1");
+const cardContainer2 = document.querySelector(".cardContainer1-2");
+const cardContainer3 = document.querySelector(".cardContainer1-3");
+const cardContainer4 = document.querySelector(".cardContainer1-4");
+const cardContainer5 = document.querySelector(".cardContainer2-1");
+const cardContainer6 = document.querySelector(".cardContainer2-2");
+const cardContainer7 = document.querySelector(".cardContainer2-3");
+const cardContainer8 = document.querySelector(".cardContainer2-4");
+const cardContainer9 = document.querySelector(".cardContainer3-1");
+const cardContainer10 = document.querySelector(".cardContainer3-2");
+const cardContainer11 = document.querySelector(".cardContainer3-3");
+
+cardContainer1.innerHTML = `<img src="${favoriteGames[0].games[0].image}" alt="Game Image">`;
+cardContainer2.innerHTML = `<img src="${favoriteGames[0].games[1].image}" alt="Game Image">`;
+cardContainer3.innerHTML = `<img src="${favoriteGames[0].games[2].image}" alt="Game Image">`;
+cardContainer4.innerHTML = `<img src="${favoriteGames[0].games[3].image}" alt="Game Image">`;
+cardContainer5.innerHTML = `<img src="${favoriteGames[1].games[0].image}" alt="Game Image">`;
+cardContainer6.innerHTML = `<img src="${favoriteGames[1].games[1].image}" alt="Game Image">`;
+cardContainer7.innerHTML = `<img src="${favoriteGames[1].games[2].image}" alt="Game Image">`;
+cardContainer8.innerHTML = `<img src="${favoriteGames[1].games[3].image}" alt="Game Image">`;
+cardContainer9.innerHTML = `<img src="${favoriteGames[2].games[0].image}" alt="Game Image">`;
+cardContainer10.innerHTML = `<img src="${favoriteGames[2].games[1].image}" alt="Game Image">`;
+cardContainer11.innerHTML = `<img src=${favoriteGames[2].games[2].image}" alt="Game Image">`;
+
+          
+
+// }
+// }
+
+                // for (const genre of favoriteGames) {
+                //     if (genre.genre === 'Action') {
+                //         picture5 = genre.games[0].image;
+                //         picture6 = genre.games[1].image;
+                //         picture7 = genre.games[2].image;
+                //         picture8 = genre.games[].image;
+
+
+                //         if (cardContainer5 && picture5) {
+                //             cardContainer5.innerHTML = `<img src="${picture5}" alt="Game Image">`;
+                //             }
+        
+                //             if (cardContainer6 && picture6) {
+                //             cardContainer6.innerHTML = `<img src="${picture6}" alt="Game Image">`;
+                //             }
+        
+                //             if (cardContainer7 && picture7) {
+                //             cardContainer7.innerHTML = `<img src="${picture7}" alt="Game Image">`;
+                //             }
+        
+                //             if (cardContainer8 && picture8) {
+                //             cardContainer8.innerHTML = `<img src="${picture8}" alt="Game Image">`;
+                //             }
+                //             break;
+                //     }
+                // }
+
+                   
     
-        let cardText = document.createElement("div");
     
-}
-}
+
+               
+//                     // favoriteGames.games.forEach((genre) => {
+
+//                     //     genre.games.forEach((games) => {
+            
+//                     //     });
+//                     // });
+
+
+
+// const horrorGames = games.filter(game => game.category === 'horror');
+
+// if (horrorGames.length > 0) {
+//   const firstCardContainer = document.querySelector('.row .card-container:first-child');
+//   const firstCard = createCardElement(horrorGames[0]);
+//   firstCardContainer.appendChild(firstCard);
+// }
+
+
+// const actionGenre = favoriteGames.find(genre => genre.genre === 'Action');
+// const firstActionGame = actionGenre.games[0];
+// const firstActionImage = firstActionGame.image;
+
+// const cardContainer1Row2 = document.querySelector(".rowContainer2 .cardContainer1");
+// if (cardContainer1Row2 && firstActionImage) {
+//   cardContainer1Row2.innerHTML = `<img src="${firstActionImage}" alt="Game Image">`;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////
     //styling of the headContainer//
 //////////////////////////////////////////    
 
         body.style = `
-        background-color: #F2F2F2;
+        background-color: black;
         padding: 0;
         margin: 0;
-        border: red solid 2px;
+        // border: red solid 2px;
         width: 100%;
         
 
@@ -347,8 +427,8 @@ let mainWrapper = document.createElement("div");
         `
 
         headContainer.style = `
-        border: blue solid 2px;
-        width: 90%;
+        // border: blue solid 2px;
+        width: 100%;
         height: 12%;
 
         display: flex;
@@ -358,9 +438,11 @@ let mainWrapper = document.createElement("div");
         `
 
         profileImgContainer.style = `
-        border: green solid 2px;
-        width: 5%;
-        height: 5rem;
+        border: white solid 2px;
+        width: 8%;
+        height: 50%;
+
+        border-radius: 0.5rem;
 
         display: flex;
         justify-content: center;
@@ -368,7 +450,7 @@ let mainWrapper = document.createElement("div");
         `
 
         profileImg.style = `
-        border: gray solid 2px;
+        // border: gray solid 2px;
         width: 100%;
         height: 100%;
         
@@ -422,7 +504,7 @@ let mainWrapper = document.createElement("div");
 ////////////////////////////////////////////
 
         mainWrapper.style = `
-        border: violet solid 4px;
+        // border: violet solid 4px;
         width: 90%;
         height: 83rem;
 
@@ -442,9 +524,9 @@ let mainWrapper = document.createElement("div");
 
 
 
-/////////////////////////////////////////////
-        //populating cardContainer1 with object     //
-////////////////////////////////////////////
+// /////////////////////////////////////////////
+//         //populating cardContainer1 with object     //
+// ////////////////////////////////////////////
 
 
 
@@ -452,3 +534,212 @@ let mainWrapper = document.createElement("div");
 
 
 
+// const favoriteGames = [
+//     {
+//       genre: 'Horror',
+//       games: [
+//         {
+//           image: 'https://cdn.akamai.steamstatic.com/steam/apps/381210/capsule_616x353.jpg?t=1685645607',
+//           name: 'Dead by Daylight',
+//           releaseYear: '2016',
+//           online: 'Yes',
+//           typeOfGame: 'multiplayer survival horror',
+//           typeOfGameplay: '1 killer vs 4 survivors',
+//           platforms: ['steam', 'Xbox', 'PlayStation', 'Switch', 'iOS', 'Android', 'Stadia'],
+//           hoursPlayed: '3086.7',
+//           nbOfMaps: '18',
+//           nbOfKillers: '32',
+//           nbOfSurvivors: '37',
+//         },
+//         {
+//           image: 'https://image.jeuxvideo.com/medias-sm/157538/1575376885-3452-capture-d-ecran.jpg',
+//           name: 'Alien Isolation',
+//           releaseYear: '2014',
+//           online: 'no',
+//           typeOfGame: 'solo survival horror',
+//           typeOfGameplay: 'Alien vs Us',
+//           platforms: ['PlayStation 3', 'Playstation 4', 'Windows', 'Xbox 360', 'Xbox One', 'OS X', 'Android', 'iOS'],
+//           hoursPlayed: '35',
+//           nbOfMaps: 'Undefined',
+//           nbOfKillers: '1',
+//           nbOfSurvivors: '1',
+//         },
+//         {
+//           image: 'https://image.api.playstation.com/cdn/UP0240/CUSA10518_00/Zgjse2LA3r6ZknG2wN4FDAmUuZXwe09g.png',
+//           name: 'The Forest',
+//           releaseYear: '2018',
+//           online: 'yes',
+//           typeOfGame: 'solo/mutliplayer survival horror',
+//           typeOfGameplay: 'open world',
+//           platforms: ['Windows', 'PlayStation 4'],
+//           hoursPlayed: '149.5',
+//           nbOfMaps: 'Undefined',
+//           nbOfKillers: 'Undefined',
+//           nbOfSurvivors: 'Undefined',
+//         },
+//         {
+//           image: 'https://ds.static.rtbf.be/article/image/1920x1080/1/0/2/c3a6bc0aaeb74a8a13f1e29e7e36e5a6-1526987790.jpg',
+//           name: 'Resident Evil: Biohazard',
+//           releaseYear: '2017',
+//           online: 'no',
+//           typeOfGame: 'first-person shooter',
+//           platforms: ['Windows', 'PlayStation 3', 'PlayStation 4', 'Xbox One'],
+//           hoursPlayed: '15',
+//           nbOfMaps: 'Undefined',
+//           nbOfKillers: 'Undefined',
+//           nbOfSurvivors: 'Undefined',
+//         },
+//       ],
+//     },
+//     {
+//       genre: 'Action',
+//       games: [
+//         {
+//           image: 'https://i.ytimg.com/vi/8kRJ-_FuFVk/maxresdefault.jpg',
+//           name: 'KONA',
+//           releaseYear: '2016',
+//           online: 'no',
+//           typeOfGame: 'solo/first person vue',
+//           platforms: ['Windows', 'PlayStation 4', 'PlayStation 5', 'Nintendo Switch', 'Xbox One', '...'],
+//           hoursPlayed: '13.2',
+//           nbOfMaps: 'Undefined',
+//           nbOfKillers: 'Undefined',
+//           nbOfSurvivors: 'Undefined',
+//         },
+//         {
+//           image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/424840/capsule_616x353.jpg?t=1676289679',
+//           name: 'Little Nightmares',
+//           releaseYear: '2017',
+//           online: 'no',
+//           typeOfGame: 'platform game',
+//           platforms: ['Windows', 'PlayStation 4', 'Xbox One', 'Nintendo Switch', 'Android', 'iOS', 'Google Stadia'],
+//           hoursPlayed: '5.8',
+//           nbOfMaps: 'Undefined',
+//           nbOfKillers: 'Undefined',
+//           nbOfSurvivors: 'Undefined',
+//         },
+//         {
+//           image: 'https://cdn.akamai.steamstatic.com/steam/apps/201810/capsule_616x353.jpg?t=1630605243',
+//           name: 'Wolfenstein: The New Order',
+//           releaseYear: '2014',
+//           online: 'no',
+//           typeOfGame: 'first-person shooter',
+//           platforms: ['Windows', 'PlayStation 3', 'PlayStation 4', 'Xbox One', 'Xbox 360'],
+//           hoursPlayed: '63.8',
+//           nbOfMaps: 'Undefined',
+//           nbOfKillers: 'Undefined',
+//           nbOfSurvivors: 'Undefined',
+//         },
+//       ],
+//     },
+//     {
+//       genre: 'Other',
+//       games: [
+//         {
+//           image: 'https://www.games-manuals.com/wp-content/uploads/2023/01/Kerbal-Space-Program.jpg',
+//           name: 'Kerbal Space Program',
+//           releaseYear: '2017',
+//           online: 'no',
+//           typeOfGame: 'space flight simulator',
+//           platforms: ['Windows', 'PlayStation 4', 'PlayStation 5', 'Xbox One'],
+//           hoursPlayed: '144.4',
+//           nbOfMaps: 'Undefined',
+//           nbOfKillers: 'Undefined',
+//           nbOfSurvivors: 'Undefined',
+//         },
+//         {
+//           image: 'https://cdn.akamai.steamstatic.com/steam/apps/311060/capsule_616x353.jpg?t=1679997424',
+//           name: 'Battle of Mages',
+//           releaseYear: '2005',
+//           online: 'no',
+//           typeOfGame: 'strategic',
+//           platforms: ['Windows'],
+//           hoursPlayed: '85',
+//           nbOfMaps: 'Undefined',
+//           nbOfKillers: 'Undefined',
+//           nbOfSurvivors: 'Undefined',
+//         },
+//       ],
+//     },
+//   ];
+  
+//   // Create main wrapper
+//   const mainWrapper = document.createElement('div');
+//   mainWrapper.classList.add('mainWrapper');
+//   document.body.appendChild(mainWrapper);
+  
+//   // Create the first row for horror games
+//   const horrorRowContainer = document.createElement('div');
+//   horrorRowContainer.classList.add('cardRowContainer');
+//   horrorRowContainer.style.cssText = `
+//     border: pink dashed 2px;
+//     width: 100%;
+//     height: 20rem;
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//   `;
+//   mainWrapper.appendChild(horrorRowContainer);
+  
+//   // Add horror game images to the first row
+//   const horrorGames = favoriteGames.find((genre) => genre.genre === 'Horror');
+//   horrorGames.games.forEach((game) => {
+//     const cardContainer = createCardContainer(game);
+//     horrorRowContainer.appendChild(cardContainer);
+//   });
+  
+//   // Create the second row for action games
+//   const actionRowContainer = document.createElement('div');
+//   actionRowContainer.classList.add('cardRowContainer');
+//   actionRowContainer.style.cssText = `
+//     border: lightblue dashed 2px;
+//     width: 100%;
+//     height: 20rem;
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//   `;
+//   mainWrapper.appendChild(actionRowContainer);
+  
+//   // Add action game images to the second row
+//   const actionGames = favoriteGames.find((genre) => genre.genre === 'Action');
+//   actionGames.games.forEach((game) => {
+//     const cardContainer = createCardContainer(game);
+//     actionRowContainer.appendChild(cardContainer);
+//   });
+  
+//   // Function to create card container
+//   function createCardContainer(game) {
+//     const cardContainer = document.createElement('div');
+//     cardContainer.classList.add('cardContainer');
+//     cardContainer.style.cssText = `
+//       border: solid 1px black;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       width: 15rem;
+//       height: 100%;
+//     `;
+  
+//     const gameImage = document.createElement('img');
+//     gameImage.src = game.image;
+//     gameImage.alt = game.name;
+//     gameImage.style.cssText = `
+//       width: 10rem;
+//       height: 10rem;
+//       object-fit: cover;
+//       margin-bottom: 1rem;
+//     `;
+//     cardContainer.appendChild(gameImage);
+  
+//     const gameName = document.createElement('p');
+//     gameName.textContent = game.name;
+//     gameName.style.cssText = `
+//       text-align: center;
+//       font-weight: bold;
+//     `;
+//     cardContainer.appendChild(gameName);
+  
+//     return cardContainer;
+//   }
+  
