@@ -20,7 +20,7 @@ const favoriteGames = [
             },
         
             {
-                image: 'https://image.jeuxvideo.com/medias-sm/157538/1575376885-3452-capture-d-ecran.jpg',
+                image: 'https://assets-prd.ignimgs.com/2021/12/15/alien-isolation-button-fin-1639607046894.jpg',
                 name: 'Alien Isolation',
                 releaseYear: '2014',
                 online: 'no',
@@ -68,7 +68,7 @@ const favoriteGames = [
         genre: 'Action',
         games: [
             {
-                image: 'https://i.ytimg.com/vi/8kRJ-_FuFVk/maxresdefault.jpg',
+                image: 'https://gogunlocked.com/wp-content/uploads/2021/03/Kona-Free-Download-639x361.jpg',
                 name: 'KONA',
                 releaseYear: '2016',
                 online: 'no',
@@ -94,7 +94,7 @@ const favoriteGames = [
             },
 
             {
-                image: 'https://cdn.akamai.steamstatic.com/steam/apps/201810/capsule_616x353.jpg?t=1630605243',
+                image: 'https://image.api.playstation.com/vulcan/ap/rnd/202009/3004/vBMLi9eBeiGdWNQvH173EAOC.png',
                 name: 'Wolfenstein: The New Order',
                 releaseYear: '2014',
                 online: 'no',
@@ -107,7 +107,7 @@ const favoriteGames = [
             },
 
             {
-                image: 'https://images.gog-statics.com/6508b1ee5fd279a6968554add231c219b632921075463ba230172b58f0825899_product_card_v2_mobile_slider_639.jpg',
+                image: 'https://images.gog-statics.com/098594caa6f1353366914f80006c997b7e3ffb0ef99c00824adcd5ccc559cec9.jpg',
                 name: 'Tomb Raider: Legend',
                 releaseYear: '2006',
                 online: 'no',
@@ -151,7 +151,7 @@ const favoriteGames = [
             },
 
             {
-                image: 'https://images.gog-statics.com/9086e259a293bed11ecd5dd3c9b5c85d28f4474b612795a1d29c286aab481217.jpg',
+                image: 'https://gaming-cdn.com/images/products/2088/616x353/besiege-pc-mac-game-steam-cover.jpg?v=1649240600',
                 name: 'Besiege',
                 releaseYear: '2015',
                 online: 'yes',
@@ -288,31 +288,119 @@ let mainWrapper = document.createElement("div");
 
                 
                     
-const cardContainer1 = document.querySelector(".cardContainer1-1");
-const cardContainer2 = document.querySelector(".cardContainer1-2");
-const cardContainer3 = document.querySelector(".cardContainer1-3");
-const cardContainer4 = document.querySelector(".cardContainer1-4");
-const cardContainer5 = document.querySelector(".cardContainer2-1");
-const cardContainer6 = document.querySelector(".cardContainer2-2");
-const cardContainer7 = document.querySelector(".cardContainer2-3");
-const cardContainer8 = document.querySelector(".cardContainer2-4");
-const cardContainer9 = document.querySelector(".cardContainer3-1");
-const cardContainer10 = document.querySelector(".cardContainer3-2");
-const cardContainer11 = document.querySelector(".cardContainer3-3");
+const cardContainer1 = document.querySelector(".cardContainer1-1, .cardContainers");
+const cardContainer2 = document.querySelector(".cardContainer1-2, .cardContainers");
+const cardContainer3 = document.querySelector(".cardContainer1-3, .cardContainers");
+const cardContainer4 = document.querySelector(".cardContainer1-4, .cardContainers");
+const cardContainer5 = document.querySelector(".cardContainer2-1, .cardContainers");
+const cardContainer6 = document.querySelector(".cardContainer2-2, .cardContainers");
+const cardContainer7 = document.querySelector(".cardContainer2-3, .cardContainers");
+const cardContainer8 = document.querySelector(".cardContainer2-4, .cardContainers");
+const cardContainer9 = document.querySelector(".cardContainer3-1, .cardContainers");
+const cardContainer10 = document.querySelector(".cardContainer3-2, .cardContainers");
+const cardContainer11 = document.querySelector(".cardContainer3-3, .cardContainers");
 
-cardContainer1.innerHTML = `<img src="${favoriteGames[0].games[0].image}" alt="Game Image">`;
-cardContainer2.innerHTML = `<img src="${favoriteGames[0].games[1].image}" alt="Game Image">`;
-cardContainer3.innerHTML = `<img src="${favoriteGames[0].games[2].image}" alt="Game Image">`;
-cardContainer4.innerHTML = `<img src="${favoriteGames[0].games[3].image}" alt="Game Image">`;
-cardContainer5.innerHTML = `<img src="${favoriteGames[1].games[0].image}" alt="Game Image">`;
-cardContainer6.innerHTML = `<img src="${favoriteGames[1].games[1].image}" alt="Game Image">`;
-cardContainer7.innerHTML = `<img src="${favoriteGames[1].games[2].image}" alt="Game Image">`;
-cardContainer8.innerHTML = `<img src="${favoriteGames[1].games[3].image}" alt="Game Image">`;
-cardContainer9.innerHTML = `<img src="${favoriteGames[2].games[0].image}" alt="Game Image">`;
-cardContainer10.innerHTML = `<img src="${favoriteGames[2].games[1].image}" alt="Game Image">`;
-cardContainer11.innerHTML = `<img src=${favoriteGames[2].games[2].image}" alt="Game Image">`;
+cardContainer1.innerHTML = `<img class ="gameImage gameImage1" src="${favoriteGames[0].games[0].image}" alt="Game Image">`;
+cardContainer2.innerHTML = `<img class ="gameImage gameImage2" src="${favoriteGames[0].games[1].image}" alt="Game Image">`;
+cardContainer3.innerHTML = `<img class ="gameImage gameImage3" src="${favoriteGames[0].games[2].image}" alt="Game Image">`;
+cardContainer4.innerHTML = `<img class ="gameImage gameImage4" src="${favoriteGames[0].games[3].image}" alt="Game Image">`;
+cardContainer5.innerHTML = `<img class ="gameImage gameImage5" src="${favoriteGames[1].games[0].image}" alt="Game Image">`;
+cardContainer6.innerHTML = `<img class ="gameImage gameImage6" src="${favoriteGames[1].games[1].image}" alt="Game Image">`;
+cardContainer7.innerHTML = `<img class ="gameImage gameImage7 "src="${favoriteGames[1].games[2].image}" alt="Game Image">`;
+cardContainer8.innerHTML = `<img class ="gameImage gameImage8" src="${favoriteGames[1].games[3].image}" alt="Game Image">`;
+cardContainer9.innerHTML = `<img class ="gameImage gameImage9" src="${favoriteGames[2].games[0].image}" alt="Game Image">`;
+cardContainer10.innerHTML = `<img class ="gameImage gameImage10" src="${favoriteGames[2].games[1].image}" alt="Game Image">`;
+cardContainer11.innerHTML = `<img class ="gameImage gameImage11" src=${favoriteGames[2].games[2].image}" alt="Game Image">`;
 
-          
+console.log(cardContainer9);
+// let gameImage1;
+// let gameImage2;
+// let gameImage3;
+// let gameImage4;
+// let gameImage5;
+// let gameImage6;
+// let gameImage7;
+// let gameImage8;
+// let gameImage9;
+// let gameImage10;
+// let gameImage11;
+// let gameImage9 = document.querySelector(".gameImage5")
+//     gameImage9.style = `
+//     width: 10%;
+//     `
+
+let gameImages = document.querySelectorAll(".gameImage");
+// let cardContainers = document.querySelectorAll(".cardContainers");
+
+gameImages.forEach((image) => {
+  image.addEventListener("mouseenter", () => {
+    image.style = `
+        transform: scale(1.1);
+        transition: ease-in 0.5s;
+        `
+  });
+
+  image.addEventListener("mouseleave", () => {
+    image.style = `
+        transform: scale(1);
+        transition: ease-in 0.5s;
+        `
+  });
+
+  
+  image.addEventListener("click", () => {
+    image.style.transform = "scale(1.1)";
+    image.style.transition = "ease-in 0.5s";
+  });
+
+  image.addEventListener("click", () => {
+    
+    image.style = `
+    transform: rotateY(180deg);
+    transition: ease-in 0.5s;
+    backface-visibility: hidden;
+    `
+  });
+});
+
+
+
+
+// let arrayGameImages = [gameImage1 = document.querySelector(".gameImage1"), gameImage2 = document.querySelector(".gameImage2"), gameImage3 = document.querySelector(".gameImage3"), gameImage4 = document.querySelector(".gameImage4"), gameImage5 = document.querySelector(".gameImage5"), gameImage6 = document.querySelector(".gameImage7"), gameImage7 = document.querySelector(".gameImage7"), gameImage8 = document.querySelector(".gameImage8"), gameImage9 = document.querySelector(".gameImage9"), gameImage10 = document.querySelector(".gameImage10"), gameImage11 = document.querySelector(".gameImage11") ];
+
+
+// for( let i = 0; i < arrayGameImages.length; i++ ) {
+
+//     arrayGameImages[i].addEventListener("mouseenter", () => {
+//         arrayGameImages[i].style = `
+
+//         transform: scale(1.1);
+//         transition: ease-in 0.5s;
+//         `
+//     })
+// }
+
+
+
+// cardContainer1.addEventListener("mouseenter", () => {
+//     gameImage.style = `
+
+//     scale: 1.1;
+//     transition: scale ease-in 0.5s;
+//     `
+    
+// })
+
+
+// cardContainer1.addEventListener("mouseleave", () => {
+//     gameImage.style = `
+    
+//     scale: 1;
+//     transition: scale ease-in 0.5s;`
+// })
+
+
+
 
 // }
 // }
