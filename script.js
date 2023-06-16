@@ -139,7 +139,7 @@ const favoriteGames = [
 
             {
                 image: 'https://cdn.akamai.steamstatic.com/steam/apps/311060/capsule_616x353.jpg?t=1679997424',
-                name: 'Battle of Mages',
+                name: 'Battle Mages',
                 releaseYear: '2005',
                 online: 'no',
                 typeOfGame: 'strategic',
@@ -158,6 +158,19 @@ const favoriteGames = [
                 typeOfGame: 'strategy/simulation',
                 platforms: ['Windows', 'macOS', 'Xbox Series', 'Xbox One',],
                 hoursPlayed: '97.3',
+                nbOfMaps: 'Undefined',
+                nbOfKillers: 'Undefined',
+                nbOfKillers: 'Undefined',
+            },
+
+            {
+                image: 'https://cdn.akamai.steamstatic.com/steam/apps/230290/capsule_616x353.jpg?t=1683136563',
+                name: 'Universe Sandbox',
+                releaseYear: '2008',
+                online: 'no',
+                typeOfGame: 'simulation espace',
+                platforms: ['Windows', 'macOS'],
+                hoursPlayed: '3',
                 nbOfMaps: 'Undefined',
                 nbOfKillers: 'Undefined',
                 nbOfKillers: 'Undefined',
@@ -197,10 +210,12 @@ let headTextContainer = document.createElement("div");
 let headTitle = document.createElement("div");
     headTextContainer.appendChild(headTitle);
     headTitle.classList.add("headTitle");
+    headTitle.textContent = "Krynski's Adam Collection of his Favorite Games"
 
 let headText = document.createElement("div");
     headTextContainer.appendChild(headText);
     headText.classList.add("headText");
+    headText.textContent = "And yeah I LOVE horror games, even though they're scary XD"
 
 //////////////////////////////////////////////////
                 //Main content//
@@ -210,7 +225,7 @@ let mainWrapper = document.createElement("div");
     wrapper.appendChild(mainWrapper);
     mainWrapper.classList.add("mainWrapper");
 
-    for( let i = 1; i <= 4; i++ ) {
+    for( let i = 1; i <= 3; i++ ) {
         
         let cardRowContainer = document.createElement("div");
         mainWrapper.appendChild(cardRowContainer);
@@ -218,13 +233,17 @@ let mainWrapper = document.createElement("div");
         cardRowContainer.style = `
         // border: pink dashed 2px;
         width: 100%;
-        height: 20rem;
+        // height: 20rem;
 
         // flex-wrap: wrap;
+        overflow: hidden;
+        padding-top: 1rem;
 
         display: flex;
         justify-content: space-around;
-        align-items: center;
+        align-content: space-between;
+
+        flex-wrap: wrap;
         `
     
 
@@ -242,7 +261,7 @@ let mainWrapper = document.createElement("div");
             height: 19rem;
             border-radius: 0.2rem; 
             overflow: hidden;
-            
+            margin-top: 2rem;
 
             display: flex;
             justify-content: center;
@@ -285,6 +304,8 @@ let mainWrapper = document.createElement("div");
                         //     break;
                     }
                 }
+              
+
 
                 
                     
@@ -299,6 +320,7 @@ const cardContainer8 = document.querySelector(".cardContainer2-4, .cardContainer
 const cardContainer9 = document.querySelector(".cardContainer3-1, .cardContainers");
 const cardContainer10 = document.querySelector(".cardContainer3-2, .cardContainers");
 const cardContainer11 = document.querySelector(".cardContainer3-3, .cardContainers");
+const cardContainer12 = document.querySelector(".cardContainer3-4, .cardContainers");
 
 cardContainer1.innerHTML = `<img class ="gameImage gameImage1" src="${favoriteGames[0].games[0].image}" alt="Game Image">`;
 cardContainer2.innerHTML = `<img class ="gameImage gameImage2" src="${favoriteGames[0].games[1].image}" alt="Game Image">`;
@@ -311,6 +333,7 @@ cardContainer8.innerHTML = `<img class ="gameImage gameImage8" src="${favoriteGa
 cardContainer9.innerHTML = `<img class ="gameImage gameImage9" src="${favoriteGames[2].games[0].image}" alt="Game Image">`;
 cardContainer10.innerHTML = `<img class ="gameImage gameImage10" src="${favoriteGames[2].games[1].image}" alt="Game Image">`;
 cardContainer11.innerHTML = `<img class ="gameImage gameImage11" src=${favoriteGames[2].games[2].image}" alt="Game Image">`;
+cardContainer12.innerHTML = `<img class ="gameImage gameImage12" src=${favoriteGames[2].games[3].image}" alt="Game Image">`;
 
 console.log(cardContainer9);
 // let gameImage1;
@@ -494,19 +517,20 @@ gameImages.forEach((image) => {
         margin: 0;
         // border: red solid 2px;
         width: 100%;
+        padding-top: 2rem;
         
 
         display: flex;
         flex-direction: column;
         align-items: center;
-
+       
         
         `
 
         wrapper.style = `
-        border: black dashed 3px;
+        // border: green dashed 3px;
         width: 100%; 
-        height: 99rem;
+        height: 95rem;
         
         display: flex;
         flex-direction: column;
@@ -516,6 +540,7 @@ gameImages.forEach((image) => {
 
         headContainer.style = `
         // border: blue solid 2px;
+        background-color: #edf6f9;
         width: 100%;
         height: 12%;
 
@@ -557,7 +582,7 @@ gameImages.forEach((image) => {
         `
 
         headTextContainer.style = `
-        border: green solid 2px;
+        // border: green solid 2px;
         width: 100%;
         height: 100%;
 
@@ -568,20 +593,27 @@ gameImages.forEach((image) => {
         `
 
         headTitle.style = `
-        border: orange solid 2px;
+        // border: orange solid 2px;
         width: 90%;
         height: 40%;
 
         margin-top: 1rem;
+        font-family: sans-serif;
+        font-size: 1.7rem;
+        font-weight: 600;
 
         display: flex;
-        
+        align-items: flex-end;
         `
 
         headText.style = `
-        border: orange dashed 2px;
+        // border: orange dashed 2px;
         width: 90%;
         height: 40%;
+
+        font-family: sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
         
         `
 
@@ -593,9 +625,12 @@ gameImages.forEach((image) => {
 
         mainWrapper.style = `
         // border: violet solid 4px;
-        width: 90%;
-        height: 83rem;
+        width: 80%;
+        // height: 83rem;
 
+        margin-top: 8rem;
+       
+        padding-bottom: 8rem;
         padding-left: 4rem;
         padding-right: 4rem;
        
@@ -604,7 +639,7 @@ gameImages.forEach((image) => {
         flex-direction: column;
         justify-content: space-between;
         
-
+       
   
         
         `
